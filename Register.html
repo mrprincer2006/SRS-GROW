@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRS GROW - Register</title>
+  <style>
+    header {
+      background: #2d7a2d;
+      padding: 12px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      color: #ffd700;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Royal gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .register-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+      width: 380px;
+      text-align: center;
+    }
+    .register-container img {
+      height: 80px;
+      margin-bottom: 15px;
+    }
+    .register-container h2 {
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+    .register-container input[type="text"],
+    .register-container input[type="email"],
+    .register-container input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .register-container button {
+      width: 100%;
+      padding: 12px;
+      background: #2e7d32;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .register-container button:hover {
+      background: #1b5e20;
+    }
+    .register-container a {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+    }
+    .register-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div>
+        <a href="home.html"><img src="SRS GR W.png" alt="SRS GROW Logo" style="height:50px;"></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="About Us.html">About Us</a></li>
+          <li><a href="Products.html">Products</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="register-container">
+    <img src="SRS GR W.png" alt="SRS GROW Logo">
+    <h2>Sign Up</h2>
+    <form>
+      <input type="text" placeholder="Sponsor ID" required>
+      <input type="text" placeholder="Placement ID" required>
+
+      <div style="text-align:left; margin: 10px 0;">
+        <label><input type="radio" name="side" value="left"> Left</label>
+        <label style="margin-left:15px;"><input type="radio" name="side" value="right"> Right</label>
+      </div>
+
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Phone" required>
+      <input type="date" required>
+
+      <div style="display:flex; gap:10px;">
+        <input type="text" placeholder="State" required style="flex:1;">
+        <input type="text" placeholder="City" required style="flex:1;">
+        <input type="text" placeholder="Pincode" required style="flex:1;">
+      </div>
+
+      <textarea placeholder="Address" required style="width:100%; margin:10px 0; padding:12px; border-radius:6px; border:1px solid #ccc;"></textarea>
+
+      <input type="password" placeholder="Create Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+
+      <div style="text-align:left; margin:10px 0;">
+        <label><input type="checkbox" required> Accept terms & conditions to continue.</label>
+      </div>
+
+      <div style="text-align:left; margin:10px 0;">
+        <label><input type="checkbox"> Remember me</label>
+      </div>
+
+      <button type="submit">Secure Login</button>
+      <a href="Login.html">Already have an account? Login</a>
+    </form>
+  </div>
+</body>
+</html>

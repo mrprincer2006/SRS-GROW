@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRS GROW - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .navbar img {
+      height: 70px;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar ul li {
+      margin: 0 15px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .navbar ul li a:hover {
+      color: #2e7d32;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('Screenshot 2025-08-29 at 12.27.17 AM.jpeg') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+    .hero button {
+      padding: 12px 25px;
+      background: #2e7d32;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .hero button:hover {
+      background: #1b5e20;
+    }
+
+    /* Banner Image */
+    .top-banner {
+      width: 100%;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    /* About Us Section */
+    .about-us {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .about-us h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+    .about-us p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #333;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .about-us img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 30px;
+      border-radius: 8px;
+    }
+
+    /* Our Services Section */
+    .our-services {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .our-services h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: #2e7d32;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+      align-items: start;
+    }
+    .service-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
+    .service-item img {
+      height: 70px;
+      margin-bottom: 20px;
+    }
+    .service-item p {
+      font-size: 1.1em;
+      color: #444;
+      max-width: 220px;
+    }
+
+    /* Navbar hover underline */
+    .navbar ul li a {
+      position: relative;
+      transition: color 0.3s;
+    }
+    .navbar ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: #2e7d32;
+      transition: width 0.3s;
+    }
+    .navbar ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero button animation */
+    .hero button {
+      transition: transform 0.3s, background 0.3s;
+    }
+    .hero button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Service item hover */
+    .service-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Footer social icons hover */
+    footer img {
+      transition: transform 0.3s;
+    }
+    footer img:hover {
+      transform: scale(1.2);
+    }
+
+    /* Breadcrumb styling */
+    .breadcrumb a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 8px;
+      position: relative;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .breadcrumb a:hover {
+      color: #ffd700;
+      transform: translateX(5px);
+    }
+    .breadcrumb .arrow {
+      color: #ffd700;
+      margin: 0 5px;
+    }
+
+    /* Our Links hover effect */
+    footer .links a {
+      display: inline-block;
+      transition: transform 0.3s, color 0.3s;
+    }
+    footer .links a:hover {
+      transform: translateX(5px);
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="SRS GR W.png" alt="SRS GROW Logo">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="About Us.html">About Us</a></li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="Login.html">Login</a></li>
+      <li><a href="Register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  
+
+  <img src="SRSmedicene.png" alt="Top Banner" class="top-banner">
+
+  <section class="about-us">
+    <h2>About Us</h2>
+    <p>SRS Grow Pvt. Ltd. is committed to providing high-quality Ayurvedic products to every Indian by adhering to all the guidelines for direct selling companies. We focus on natural, organic, and sustainable solutions that promote health and wellness for our customers.</p>
+    <img src="SRS GR W.png" alt="About SRS Grow"  style="height: 200px;">
+  </section>
+
+  <section class="our-services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <img src="yoga.png" alt="Natural Products">
+        <p>Natural and Organic Products for a Healthy Lifestyle</p>
+      </div>
+      <div class="service-item">
+        <img src="edu.png" alt="Training & Education">
+        <p>Comprehensive Training and Education for Our Distributors</p>
+      </div>
+      <div class="service-item">
+        <img src="health.png" alt="Customer Care">
+        <p>Dedicated Customer Care to Support Your Needs</p>
+      </div>
+      <div class="service-item">
+        <img src="money.png" alt="Affordable Pricing">
+        <p>Affordable Pricing to Make Wellness Accessible</p>
+      </div>
+      <div class="service-item">
+        <img src="community.png" alt="Community Building">
+        <p>Building a Strong Community of Health Enthusiasts</p>
+      </div>
+      <div class="service-item">
+        <img src="women.png" alt="Empowering Women">
+        <p>Empowering Women through Direct Selling Opportunities</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#1c1c1c; color:#fff; padding:40px 20px 20px; font-family:Arial, sans-serif;">
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:30px; max-width:1200px; margin:auto;">
+      
+      <!-- Company Info -->
+      <div>
+        <h3>SRS Grow Pvt. Ltd.</h3>
+        <hr style="width:50px; border:1px solid red; margin-left:0;">
+        <p>Adhering to all the guidelines for direct selling companies, SRS Grow Pvt. Ltd. uses a direct selling business model to make its Ayurvedic products available to every Indian.</p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3>Contact Us</h3>
+        <hr style="width:50px; border:1px solid red; margin-left:0;">
+        <p><img src="call logo.png" alt="Logo" style="height:24px; vertical-align:middle;"> +91 XXXXX XXXXX</p>
+       <p><img src="emaillogo.png" alt="Logo" style="height:24px; vertical-align:middle;"> info@srsgrow.in</p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3>Our Links</h3>
+        <hr style="width:50px; border:1px solid red; margin-left:0;">
+        <div class="links">
+          <p><span style="color:#ffd700;">></span> <a href="home.html" style="color:#fff; text-decoration:none;">Home</a></p>
+          <p><span style="color:#ffd700;">></span> <a href="About Us.html" style="color:#fff; text-decoration:none;">About</a></p>
+          <p><span style="color:#ffd700;">></span> <a href="Products.html" style="color:#fff; text-decoration:none;">Products</a></p>
+          <p><span style="color:#ffd700;">></span> <a href="gallery.html" style="color:#fff; text-decoration:none;">Gallery</a></p>
+          <p><span style="color:#ffd700;">></span> <a href="Contact.html" style="color:#fff; text-decoration:none;">Contact</a></p>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h3>Social Links</h3>
+        <hr style="width:50px; border:1px solid red; margin-left:0;">
+        <p>
+          <img src="facebook.png" alt="facebook" style="height: 35px;">
+          <a href="https://www.instagram.com/pr_prince0_/" target="_blank">
+         <img src="instagram.png" alt="instagram" style="height: 35px;">
+            </a>
+            <a href="https://www.youtube.com/@princeRaj-h6u" target="_blank">
+            <img src="youtube.avif" alt="youtube" style="height: 35px;">
+            </a>
+            <img src="whatsapp.png" alt="whatsapp" style="height: 35px;">
+            </p>
+      </div>
+    </div>
+    
+    <p style="text-align:center; margin-top:30px; font-size:16px; color:#fff; font-weight:bold; letter-spacing:1px;">
+      © 2025 <span style="color:#2e7d32;">SRS Grow Pvt. Ltd.</span> | Designed By <span style="color:#3835e5;">MRprincer</span>
+    </p>
+  </footer>
+
+</body>
+</html>

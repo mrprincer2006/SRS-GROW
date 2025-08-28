@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRS GROW - Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #2d7a2d;
+      padding: 12px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    .login-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    .login-container img {
+      height: 80px;
+      margin-bottom: 15px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #2e7d32;
+      font-size: 24px;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 14px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .login-container label {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(90deg, #2e7d32, #1b5e20);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background 0.3s;
+    }
+
+    .login-container button:hover {
+      background: linear-gradient(90deg, #1b5e20, #2e7d32);
+    }
+
+    .login-container a {
+      display: block;
+      margin-top: 14px;
+      font-size: 14px;
+      color: #2e7d32;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .login-container a:hover {
+      color: #1b5e20;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav-container">
+    <div>
+      <a href="home.html"><img src="SRS GR W.png" alt="SRS GROW Logo" style="height:50px;"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="login-wrapper">
+  <div class="login-container">
+    <img src="SRS GR W.png" alt="SRS GROW Logo">
+    <h2>Sign In</h2>
+    <form>
+      <input type="text" placeholder="Distributor Code" required>
+      <input type="password" placeholder="Password" required>
+      <label><input type="checkbox"> Remember me</label>
+      <button type="submit">Secure Login</button>
+      <a href="#">Forgot Password?</a>
+      <a href="register.html">Don’t have an account? Sign Up</a>
+    </form>
+  </div>
+</div>
+</body>
+</html>
