@@ -257,6 +257,32 @@
         width: 100%;
       }
     }
+        @media (max-width: 768px) {
+      .navbar {
+        transition: all 0.3s ease;
+      }
+      .navbar.shrink {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+      }
+      .navbar.shrink img {
+        height: 30px;
+      }
+      .navbar.shrink ul {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+      .navbar.shrink ul li {
+        margin: 0 5px;
+      }
+      .navbar.shrink ul li a {
+        font-size: 12px;
+        white-space: nowrap;
+      }
+    }
   </style>
 </head>
 <body>
@@ -369,6 +395,17 @@
       © 2025 <span style="color:#2e7d32;">SRS Grow Pvt. Ltd.</span> | Designed By <span style="color:#3835e5;">MRprincer</span>
     </p>
   </footer>
+
+  <script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("shrink");
+    } else {
+      navbar.classList.remove("shrink");
+    }
+  });
+</script>
 
 </body>
 </html>
