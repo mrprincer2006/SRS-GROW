@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - SRS Grow Pvt. Ltd.</title>
   <style>
+        header.navbar {
+      background:#2d7a2d;
+      padding:12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -39,9 +46,27 @@
       margin-bottom: 10px;
     }
   </style>
+    <style>
+@media (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  nav ul li {
+    flex: 0 0 auto;
+  }
+  nav ul li a {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+</style>
 </head>
 <body>
-    <header style="background:#2d7a2d; padding:12px 0;">
+       <header class="navbar">
   <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px;">
     <div>
       <a href="home.html"><img src="SRS GR W.png" alt="SRS GROW Logo" style="height:50px;"></a>
