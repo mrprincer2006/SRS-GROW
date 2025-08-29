@@ -22,7 +22,8 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .navbar img {
-      height: 70px;
+      height: 50px;
+      max-width: 100%;
     }
     .navbar ul {
       list-style: none;
@@ -341,3 +342,20 @@
 
 </body>
 </html>
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+      }
+      .navbar ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar ul li {
+        margin: 10px 0;
+      }
+      .navbar img {
+        height: 40px;
+      }
+    }
