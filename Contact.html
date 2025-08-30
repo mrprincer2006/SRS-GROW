@@ -98,62 +98,108 @@
             }
         }
         header {
-          background: #2d7a2d;
-          padding: 12px 0;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+          background: linear-gradient(135deg, #2e7d32, #66bb6a);
           position: sticky;
           top: 0;
           z-index: 1000;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
-
-        header .nav-container {
-          max-width: 1200px;
+        .nav {
+          max-width: 900px;
           margin: 0 auto;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 0 20px;
+          padding: 12px 16px;
         }
-
-        header nav ul {
-          list-style: none;
+        .brand {
           display: flex;
-          gap: 25px;
+          align-items: center;
+          gap: 10px;
+        }
+        .brand img {
+          height: 42px;
+        }
+        .brand a {
+          color: #fff;
+          font-weight: bold;
+          text-decoration: none;
+          font-size: 18px;
+        }
+        #nav-toggle {
+          position: absolute;
+          left: -9999px;
+        }
+        .menu-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 48px;
+          height: 48px;
+          cursor: pointer;
+        }
+        .menu-btn .bar {
+          width: 25px;
+          height: 3px;
+          background: #fff;
+          position: relative;
+        }
+        .menu-btn .bar::before,
+        .menu-btn .bar::after {
+          content: "";
+          position: absolute;
+          width: 25px;
+          height: 3px;
+          background: #fff;
+          left: 0;
+        }
+        .menu-btn .bar::before { top: -7px; }
+        .menu-btn .bar::after { top: 7px; }
+        nav ul {
+          display: none;
+          flex-direction: column;
+          background: #388e3c;
           margin: 0;
           padding: 0;
+          list-style: none;
         }
-
-        header nav ul li a {
+        nav ul li a {
           color: #fff;
+          padding: 14px 20px;
+          display: block;
           text-decoration: none;
-          font-weight: 500;
-          transition: color 0.3s;
+          border-bottom: 1px solid rgba(255,255,255,0.2);
         }
-
-        header nav ul li a:hover {
-          color: #ffd700;
+        nav ul li a:hover {
+          background: #2e7d32;
+        }
+        #nav-toggle:checked ~ nav ul {
+          display: flex;
         }
     </style>
 </head>
 <body>
-    <header>
-      <div class="nav-container">
-        <div>
-          <a href="index.html"><img src="SRS GR W.png" alt="SRS GROW Logo" style="height:50px;"></a>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="About Us.html">About Us</a></li>
-            <li><a href="Products.html">Products</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-          </ul>
-        </nav>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <a href="index.html"><img src="SRS GR W.png" alt="SRS GROW Logo"></a>
+        <a href="index.html">SRS GROW</a>
       </div>
-    </header>
+      <label for="nav-toggle" class="menu-btn"><span class="bar"></span></label>
+    </div>
+    <input type="checkbox" id="nav-toggle">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
     <div class="container">
         <h1>Contact Us</h1>
         <p>We'd love to hear from you! Reach out to us with your queries, feedback, or partnership opportunities.</p>
@@ -185,13 +231,13 @@
     </div>
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 SRS Grow Pvt. Ltd. All rights reserved.</p>
+            <p>&copy; 2025 SRS Grow Pvt. Ltd. All rights reserved.</p>
             <p>
                 <a href="https://srsgrow.in">Home</a> |
                 <a href="Contact.html">Contact</a> |
                 <a href="https://www.linkedin.com/company/srsgrow/">LinkedIn</a>
             </p>
-            <p>Empowering sustainable agriculture for a better tomorrow.</p>
+            <p>“Empowering people to grow, achieve success, and inspire others.”</p>
         </div>
     </footer>
 </body>
