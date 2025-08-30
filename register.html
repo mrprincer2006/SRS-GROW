@@ -1,198 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SRS GROW - Register</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>SRS GROW — Create Account</title>
+  <meta name="color-scheme" content="light only" />
   <style>
-    header {
-      background: #2d7a2d;
-      padding: 12px 0;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    :root{
+      --primary:#2e7d32;
+      --primary-dark:#1b5e20;
+      --bg-1:#0f2027; --bg-2:#203a43; --bg-3:#2c5364;
+      --surface:#ffffff; --text:#111; --muted:#666;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      background:linear-gradient(135deg,var(--bg-1),var(--bg-2),var(--bg-3));
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      min-height:100svh; display:flex; flex-direction:column;
     }
 
-    header .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
+    header{position:sticky;top:0;z-index:1000;background:var(--primary);box-shadow:0 4px 6px rgba(0,0,0,.2)}
+    .nav{
+      max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;
+      padding:10px 16px;
     }
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{height:40px;width:auto;display:block}
+    .brand a{color:#fff;text-decoration:none;font-weight:600;font-size:18px;letter-spacing:.2px}
 
-    header nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
+    #nav-toggle{position:absolute;left:-9999px}
+    .menu-btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      width:48px;height:48px;border:0;background:transparent;cursor:pointer;color:#fff
     }
+    .menu-btn .bar{display:block;width:22px;height:2px;background:#fff;position:relative}
+    .menu-btn .bar::before,.menu-btn .bar::after{
+      content:"";position:absolute;left:0;width:22px;height:2px;background:#fff
+    }
+    .menu-btn .bar::before{top:-6px}
+    .menu-btn .bar::after{top:6px}
 
-    header nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+    nav ul{
+      list-style:none;margin:0;padding:0;
+      display:none;
+      background:var(--primary);
     }
+    nav ul li a{
+      display:block;padding:14px 16px;min-height:48px;line-height:1.2;
+      color:#fff;text-decoration:none;font-weight:500;
+    }
+    nav ul li a:focus,nav ul li a:hover{background:var(--primary-dark);outline:none}
+    #nav-toggle:checked ~ nav ul{display:block}
 
-    header nav ul li a:hover {
-      color: #ffd700;
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:20px}
+    .card{
+      width:min(92vw,440px);background:var(--surface);color:var(--text);
+      border-radius:var(--radius);box-shadow:0 8px 20px rgba(0,0,0,.25);
+      padding:24px 18px;margin:20px auto;
     }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Royal gradient */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    .logo-wrap{display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+    .logo-wrap img{height:64px;width:auto}
+    h1{font-size:22px;margin:8px 0 4px}
+    p.lead{margin:0 0 14px;color:var(--muted);font-size:14px}
+
+    form{display:grid;gap:12px}
+    label{font-size:14px;color:var(--text);display:block;margin-bottom:6px}
+    input,textarea,button{
+      font:inherit;border:1px solid #ccc;border-radius:8px;padding:12px 14px;width:100%;
+      min-height:48px;
     }
-    .register-container {
-      background: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
-      width: 380px;
-      text-align: center;
+    input:focus,textarea:focus{outline:3px solid rgba(46,125,50,.25);border-color:var(--primary)}
+    fieldset{border:1px solid #ddd;border-radius:10px;padding:10px}
+    fieldset legend{font-size:13px;color:var(--muted);padding:0 6px}
+    .row{display:flex;gap:10px}
+    .row > *{flex:1}
+
+    .actions{display:grid;gap:8px;margin-top:6px}
+    .btn-primary{
+      background:var(--primary);color:#fff;border:0;border-radius:10px;font-weight:600;cursor:pointer
     }
-    .register-container img {
-      height: 80px;
-      margin-bottom: 15px;
-    }
-    .register-container h2 {
-      margin-bottom: 20px;
-      color: #2e7d32;
-    }
-    .register-container input[type="text"],
-    .register-container input[type="email"],
-    .register-container input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    .register-container button {
-      width: 100%;
-      padding: 12px;
-      background: #2e7d32;
-      border: none;
-      border-radius: 6px;
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .register-container button:hover {
-      background: #1b5e20;
-    }
-    .register-container a {
-      display: block;
-      margin-top: 12px;
-      font-size: 14px;
-      color: #333;
-      text-decoration: none;
-    }
-    .register-container a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-    header .nav-container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    header nav ul {
-      flex-direction: row;
-      overflow-x: auto;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-      width: 100%;
-      gap: 15px;
-    }
-    header nav ul li {
-      flex: 0 0 auto;
-    }
-    header nav ul li a {
-      font-size: 14px;
-      padding: 8px;
-    }
-    .register-container {
-      width: 90%;
-      padding: 20px;
-    }
-    .register-container input,
-    .register-container textarea,
-    .register-container button {
-      font-size: 14px;
-      padding: 10px;
-    }
-    .register-container img {
-      height: 60px;
-    }
-  }
-    </style>
+    .btn-primary:hover,.btn-primary:focus{background:var(--primary-dark)}
+    .muted-link{display:block;text-align:center;color:#333;font-size:14px;text-decoration:none}
+    .muted-link:hover{text-decoration:underline}
+  </style>
 </head>
 <body>
   <header>
-    <div class="nav-container">
-      <div>
-        <a href="index.html"><img src="SRS GR W.png" alt="SRS GROW Logo" style="height:50px;"></a>
+    <div class="nav">
+      <div class="brand">
+        <a href="index.html"><img src="SRS GR W.png" alt="SRS GROW Logo"></a>
+        <a href="index.html">SRS GROW</a>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="About Us.html">About Us</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Register</a></li>
-        </ul>
-      </nav>
+      <label for="nav-toggle" class="menu-btn"><span class="bar"></span></label>
     </div>
+    <input type="checkbox" id="nav-toggle">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
   </header>
-  <div class="register-container">
-    <img src="SRS GR W.png" alt="SRS GROW Logo">
-    <h2>Sign Up</h2>
-    <form>
-      <input type="text" placeholder="Sponsor ID" required>
-      <input type="text" placeholder="Placement ID" required>
 
-      <div style="text-align:left; margin: 10px 0;">
-        <label><input type="radio" name="side" value="left"> Left</label>
-        <label style="margin-left:15px;"><input type="radio" name="side" value="right"> Right</label>
-      </div>
+  <main>
+    <div class="card">
+      <div class="logo-wrap"><img src="SRS GR W.png" alt="SRS GROW Logo"></div>
+      <h1>Create Account</h1>
+      <p class="lead">Fill the form below to sign up.</p>
 
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="text" placeholder="Phone" required>
-      <input type="date" required>
+      <form>
+        <label>Sponsor ID<input type="text" required></label>
+        <label>Placement ID<input type="text" required></label>
 
-      <div style="display:flex; gap:10px;">
-        <input type="text" placeholder="State" required style="flex:1;">
-        <input type="text" placeholder="City" required style="flex:1;">
-        <input type="text" placeholder="Pincode" required style="flex:1;">
-      </div>
+        <fieldset>
+          <legend>Choose Side</legend>
+          <label><input type="radio" name="side" value="left"> Left</label>
+          <label><input type="radio" name="side" value="right"> Right</label>
+        </fieldset>
 
-      <textarea placeholder="Address" required style="width:100%; margin:10px 0; padding:12px; border-radius:6px; border:1px solid #ccc;"></textarea>
+        <label>Full Name<input type="text" required></label>
+        <label>Email Address<input type="email" required></label>
+        <label>Phone<input type="tel" inputmode="numeric" required></label>
+        <label>Date of Birth<input type="date" required></label>
 
-      <input type="password" placeholder="Create Password" required>
-      <input type="password" placeholder="Confirm Password" required>
+        <div class="row">
+          <label>State<input type="text" required></label>
+          <label>City<input type="text" required></label>
+          <label>Pincode<input type="text" inputmode="numeric" required></label>
+        </div>
 
-      <div style="text-align:left; margin:10px 0;">
-        <label><input type="checkbox" required> Accept terms & conditions to continue.</label>
-      </div>
+        <label>Address<textarea required rows="2"></textarea></label>
+        <label>Create Password<input type="password" required></label>
+        <label>Confirm Password<input type="password" required></label>
 
-      <div style="text-align:left; margin:10px 0;">
+        <label><input type="checkbox" required> Accept terms & conditions</label>
         <label><input type="checkbox"> Remember me</label>
-      </div>
 
-      <button type="submit">Secure Login</button>
-      <a href="Login.html">Already have an account? Login</a>
-    </form>
-  </div>
+        <div class="actions">
+          <button class="btn-primary" type="submit">Sign Up</button>
+          <a href="login.html" class="muted-link">Already have an account? Login</a>
+        </div>
+      </form>
+    </div>
+  </main>
 </body>
 </html>
