@@ -5,23 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - SRS Grow Pvt. Ltd.</title>
   <style>
-  body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
+  @media (min-width: 768px) {
+    footer .footer-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    .container img {
-      display: block;
-      margin: 0 auto 20px;
-      height: 80px;
-    }
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    word-wrap: break-word;
+    overflow-x: hidden;
+  }
     h1 {
       text-align: center;
       color: #2e7d32;
@@ -118,6 +131,66 @@
   #nav-toggle:checked ~ nav ul {
     display: flex;
   }
+
+  footer {
+    background-color: #111;
+    color: #ddd;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+  footer h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  footer hr {
+    width: 50px;
+    border: 2px solid #e53935;
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+  footer a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  footer a:hover {
+    color: #2e7d32;
+  }
+  footer .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    font-size: 15px;
+    color: #fff;
+  }
+  footer .contact-item img {
+    height: 22px;
+    width: 22px;
+  }
+  footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+    footer .footer-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  footer .copyright {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 13px;
+    color: #aaa;
+  }
+  .container img[alt="SRS GROW Logo"] {
+    display: block;
+    margin: 0 auto;
+  }
   </style>
 </head>
 <body>
@@ -144,7 +217,7 @@
   </header>
 
   <div class="container">
-    <img src="SRS GR W.png" alt="SRS Grow Logo" style="height: 250px;">  
+    <img src="SRS GR W.png" alt="SRS GROW Logo" style="max-height:250px; width:auto;">  
     <h1>About SRS Grow Pvt. Ltd.</h1>
     <p>SRS Grow Pvt. Ltd. is a leading direct selling company committed to making authentic Ayurvedic products accessible to every household in India. Registered under the Companies Act, 2013, we strictly adhere to all direct selling guidelines, ensuring a business model that is both ethical and sustainable. Our mission is to build a Healthy India, Prosperous India by empowering individuals with high-quality wellness products and a rewarding business opportunity.</p>
     
@@ -159,68 +232,70 @@
     
     <p>Join us on our journey to create a healthier and more prosperous future for everyone.</p>
      </p>
-      <!-- Footer -->
-       <footer style="background-color: #222; color: #ddd; padding: 50px 20px; font-family: Arial, sans-serif;">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+       <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
       
       <!-- Company Info -->
       <div>
-        <h3 style="color: #2e7d32; font-size: 22px; margin-bottom: 10px;">SRS Grow Pvt. Ltd.</h3>
-        <hr style="width: 60px; border: 2px solid #2e7d32; margin-left: 0; margin-bottom: 15px;">
-        <p style="font-size: 16px; line-height: 1.5; color: #ccc;">Adhering to all the guidelines for direct selling companies, SRS Grow Pvt. Ltd. uses a direct selling business model to make its Ayurvedic products available to every Indian.</p>
+        <h3>SRS Grow Pvt. Ltd.</h3>
+        <hr style="width:50px; border:1px solid red; margin-left:0;">
+        <p>Adhering to all the guidelines for direct selling companies, SRS Grow Pvt. Ltd. uses a direct selling business model to make its Ayurvedic products available to every Indian.</p>
       </div>
 
       <!-- Contact -->
       <div>
-        <h3 style="color: #2e7d32; font-size: 22px; margin-bottom: 10px;">Contact Us</h3>
-        <hr style="width: 60px; border: 2px solid #2e7d32; margin-left: 0; margin-bottom: 15px;">
-        <p style="font-size: 16px; color: #ccc; margin: 8px 0;">
-          
-          <img src="call logo.png" alt="Call" style="height: 24px; vertical-align: middle; margin-right: 8px;">
-          +91 XXXXX XXXXX
-        </p>
-        <p style="font-size: 16px; color: #ccc; margin: 8px 0;">
-          <img src="emaillogo.png" alt="Email" style="height: 24px; vertical-align: middle; margin-right: 8px;">
-          info@srsgrow.in
-        </p>
+        <h3>Contact Us</h3>
+        <hr style="width:50px; border:1px solid red; margin-left:0;">
+        <p><img src="call logo.png" alt="Logo" style="height:24px; vertical-align:middle;"> +91 XXXXX XXXXX</p>
+       <p><img src="emaillogo.png" alt="Logo" style="height:24px; vertical-align:middle;"> info@srsgrow.in</p>
       </div>
 
       <!-- Links -->
       <div>
-        <h3 style="color: #2e7d32; font-size: 22px; margin-bottom: 10px;">Our Links</h3>
-        <hr style="width: 60px; border: 2px solid #2e7d32; margin-left: 0; margin-bottom: 15px;">
-        <p style="margin: 6px 0;"><a href="index.html" style="color: #ddd; text-decoration: none; font-size: 16px;">Home</a></p>
-        <p style="margin: 6px 0;"><a href="About Us.html" style="color: #ddd; text-decoration: none; font-size: 16px;">About</a></p>
-        <p style="margin: 6px 0;"><a href="Products.html" style="color: #ddd; text-decoration: none; font-size: 16px;">Products</a></p>
-        <p style="margin: 6px 0;"><a href="#" style="color: #ddd; text-decoration: none; font-size: 16px;">Gallery</a></p>
-        <p style="margin: 6px 0;"><a href="#" style="color: #ddd; text-decoration: none; font-size: 16px;">Contact</a></p>
+        <h3>Our Links</h3>
+        <hr style="width:50px; border:1px solid red; margin-left:0;">
+        <div class="links">
+          <p><span style="color:#ffd700;">></span> <a href="home.html" style="color:#fff; text-decoration:none;">Home</a></p>
+          <p><span style="color:#ffd700;">></span> <a href="About Us.html" style="color:#fff; text-decoration:none;">About</a></p>
+          <p><span style="color:#ffd700;">></span> <a href="Products.html" style="color:#fff; text-decoration:none;">Products</a></p>
+          <p><span style="color:#ffd700;">></span> <a href="gallery.html" style="color:#fff; text-decoration:none;">Gallery</a></p>
+          <p><span style="color:#ffd700;">></span> <a href="Contact.html" style="color:#fff; text-decoration:none;">Contact</a></p>
+        </div>
       </div>
 
       <!-- Social -->
       <div>
-        <h3 style="color: #2e7d32; font-size: 22px; margin-bottom: 10px;">Social Links</h3>
-        <hr style="width: 60px; border: 2px solid #2e7d32; margin-left: 0; margin-bottom: 15px;">
-        <div style="display: flex; gap: 15px; align-items: center;">
-          <a href="https://www.facebook.com/yourpage" target="_blank" style="display: inline-block;">
-            <img src="facebook.png" alt="facebook" style="height: 35px;">
-          </a>
-          <a href="https://www.instagram.com/pr_prince0_/" target="_blank" style="display: inline-block;">
-            <img src="instagram.png" alt="instagram" style="height: 35px;">
-          </a>
-          <a href="https://www.youtube.com/@princeRaj-h6u" target="_blank" style="display: inline-block;">
+        <h3>Social Links</h3>
+        <hr style="width:50px; border:1px solid red; margin-left:0;">
+        <p>
+          <img src="facebook.png" alt="facebook" style="height: 35px;">
+          <a href="https://www.instagram.com/pr_prince0_/" target="_blank">
+         <img src="instagram.png" alt="instagram" style="height: 35px;">
+            </a>
+            <a href="https://www.youtube.com/@princeRaj-h6u" target="_blank">
             <img src="youtube.avif" alt="youtube" style="height: 35px;">
-          </a>
-          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" style="display: inline-block;">
+            </a>
             <img src="whatsapp.png" alt="whatsapp" style="height: 35px;">
-          </a>
-        </div>
+            </p>
       </div>
     </div>
-    <p style="text-align:center; margin-top:30px; font-size:14px;">
+    
+    <p style="text-align:center; margin-top:30px; font-size:16px; color:#fff; font-weight:bold; letter-spacing:1px;">
       © 2025 <span style="color:#2e7d32;">SRS Grow Pvt. Ltd.</span> | Designed By <span style="color:#3835e5;">MRprincer</span>
     </p>
   </footer>
 
-  </div>
+  <script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("shrink");
+    } else {
+      navbar.classList.remove("shrink");
+    }
+  });
+</script>
+
 </body>
 </html>
