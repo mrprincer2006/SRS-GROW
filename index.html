@@ -231,6 +231,41 @@
       color: #ffd700;
     }
 
+     /* 3D Frame Card */
+    .frame-card {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      background: linear-gradient(135deg, #2e7d32, #66bb6a);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      perspective: 1000px;
+      overflow: hidden;
+    }
+    .frame-card:hover {
+      transform: rotateY(8deg) rotateX(4deg) scale(1.03);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Animation for frame card */
+    .frame-card {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
      /* Responsive Navbar for Mobile */
     @media (max-width: 768px) {
       .navbar {
@@ -303,6 +338,14 @@
 
   <!-- Hero Section -->
   
+
+  <!-- 3D Frame Card -->
+  <div class="frame-card">
+  <p style="padding:20px; text-align:center; font-size:1.2rem; line-height:1.6;">
+    ✨ WELCOME TO SRS GROW ✨<br><br>
+    Founded by <strong>Shashi Ranjan Sinha</strong>, SRS GROW is a visionary direct selling company committed to empowering people with the gift of health and prosperity. Our mission is to inspire every individual to achieve a healthy body, strong mind, and a successful life. With trust, dedication, and innovation, we aim to create a brighter future for all who join our journey. 🌿💫
+  </p>
+</div>
 
   <img src="SRSmedicene.png" alt="Top Banner" class="top-banner">
 
